@@ -18,7 +18,10 @@ function setTime() {
     console.log(`${exactHour} ${exactMin} ${exactSec}`);
     let meridian=(hour>12)?"PM":"AM"
     hour = (hour > 12) ? hour - 12 : hour;
-    document.querySelector(`.digital`).innerHTML=`<h1>It's <div class="hour"> ${hour}</div><div class="minute">${min} <span class="Meridian"> ${meridian}</span> </div></h1>`;
+    let shour=(hour<10)?`0${hour}`:`${hour}`
+    let smin=(min<10)?`0${min}`:`${min}`
+    
+    document.querySelector(`.digital`).innerHTML=`<h1>It's <div class="hour"> ${shour}</div><div class="minute">${smin} <span class="Meridian"> ${meridian}</span> </div></h1>`;
     
 }
 
